@@ -31,7 +31,6 @@ public class CommandHunger extends CommandBase{
     @Override
     public void processCommand(ICommandSender icommandsender, String[] astring)
     {
-        int potionID = 4;
         EntityPlayerMP entity;
         if (astring.length > 1)
         {
@@ -41,8 +40,8 @@ public class CommandHunger extends CommandBase{
         {
             entity = getCommandSenderAsPlayer(icommandsender);
         }
-        entity.addPotionEffect(new PotionEffect(potionID, 200));
-        potionID ++;
+        entity.addPotionEffect(new PotionEffect(17, 200, 2));
+
         return;
     }
 
