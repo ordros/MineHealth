@@ -9,3 +9,5 @@ out/
 bin/
 build/
 eclipse/
+*.txt
+*.iml
