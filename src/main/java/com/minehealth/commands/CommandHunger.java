@@ -40,7 +40,7 @@ public class CommandHunger extends CommandBase{
         {
             entity = getCommandSenderAsPlayer(icommandsender);
         }
-        entity.addPotionEffect(new PotionEffect(17, 200, 2));
+        entity.addPotionEffect(new PotionEffect(17, 100*20, 2));
 
         return;
     }
