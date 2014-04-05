@@ -4,6 +4,7 @@ import java.util.*;
 import net.minecraft.command.*;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.IChatComponent;
 
 public class CommandHunger extends CommandBase{
     private List aliases;
@@ -40,7 +41,8 @@ public class CommandHunger extends CommandBase{
         {
             entity = getCommandSenderAsPlayer(icommandsender);
         }
-        entity.addPotionEffect(new PotionEffect(17, 100*20, 2));
+        entity.getFoodStats().setFoodLevel(0);
+        entity.addPotionEffect(new PotionEffect(17, 100*20, 5));
 
         return;
     }
@@ -48,7 +50,9 @@ public class CommandHunger extends CommandBase{
     @Override
     public boolean canCommandSenderUseCommand(ICommandSender icommandsender)
     {
-        return true;
+        EntityPlayerMP entity;
+        entity = getCommandSenderAsPlayer(icommandsender);
+        return entity.capabilities.isCreativeMode ? true:false;
     }
 
     @Override
