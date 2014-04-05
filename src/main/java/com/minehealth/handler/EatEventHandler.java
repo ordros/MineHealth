@@ -7,9 +7,9 @@ import net.minecraftforge.event.entity.player.PlayerUseItemEvent.Finish;
 
 import java.util.List;
 
-public class EatEventListener {
+public class EatEventHandler {
     EatLogBook logbook = new EatLogBook();
-    public EatEventListener(){
+    public EatEventHandler(){
     }
     @SubscribeEvent
     public void SomethingEaten(Finish event){
