@@ -52,7 +52,8 @@ public class CommandHunger extends CommandBase{
     {
         EntityPlayerMP entity;
         entity = getCommandSenderAsPlayer(icommandsender);
-        return entity.capabilities.isCreativeMode ? true:false;
+        return true;
+        //return entity.capabilities.isCreativeMode ? true:false;
     }
 
     @Override
