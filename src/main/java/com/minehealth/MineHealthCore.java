@@ -3,6 +3,7 @@ package com.minehealth;
 import com.minehealth.commands.CommandHunger;
 import com.minehealth.commands.CommandReadLogBook;
 import com.minehealth.handler.EatEventHandler;
+import com.minehealth.handler.UserLoginHandler;
 import com.minehealth.logbook.EatLogBook;
 import cpw.mods.fml.common.*;
 import cpw.mods.fml.common.event.*;
@@ -25,6 +26,7 @@ public class MineHealthCore {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event){
         MinecraftForge.EVENT_BUS.register(new EatEventHandler());
+    //    MinecraftForge.EVENT_BUS.register(new UserLoginHandler());
     }
     @EventHandler
     public void init(FMLInitializationEvent event){

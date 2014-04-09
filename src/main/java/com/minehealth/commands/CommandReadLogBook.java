@@ -13,9 +13,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * Created by favcastle on 2014/04/05.
- */
 public class CommandReadLogBook extends CommandBase {
 
     private EatLogBook logbook;
