@@ -16,10 +16,10 @@ public class EatEventHandler {
     public void SomethingEaten(Finish event){
         if(event.item.getItem() instanceof ItemFood){
             logbook.addEatLog(event.item);
-            food.setFoodNutrition(event.item);
-            System.out.println(food.protein);
+            food.getFoodNutrition(event.item);
 
             NBTTagCompound tag = event.entityPlayer.getEntityData();
+
         }
 
     }

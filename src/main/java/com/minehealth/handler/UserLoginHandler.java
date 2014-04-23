@@ -23,6 +23,7 @@ public class UserLoginHandler {
             if(modeTag != null) {
                 logBook.addEatLog(new ItemStack(ItemFood.getItemById(1)));
             }
+            logBook.addEatLog(new ItemStack(ItemFood.getItemById(1)));
         }
     }
 }

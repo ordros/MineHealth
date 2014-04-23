@@ -9,6 +9,8 @@ import cpw.mods.fml.common.*;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.Mod.*;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.Configuration;
+
 
 @Mod(modid = MineHealthCore.MODID, name = MineHealthCore.MODID, version = MineHealthCore.VERSION)
 public class MineHealthCore {
@@ -27,6 +29,9 @@ public class MineHealthCore {
     public void preInit(FMLPreInitializationEvent event){
         MinecraftForge.EVENT_BUS.register(new EatEventHandler());
     //    MinecraftForge.EVENT_BUS.register(new UserLoginHandler());
+        Configuration config = new Configuration(event.getSuggestedConfigurationFile());
+        config.load();
+        config.save();
     }
     @EventHandler
     public void init(FMLInitializationEvent event){

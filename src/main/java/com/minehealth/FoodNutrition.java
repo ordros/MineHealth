@@ -7,17 +7,15 @@ import net.minecraft.item.ItemStack;
 public class FoodNutrition {
 
     public int protein, carbohydrate, fats, minerals, vitamins;
-    public int nutritions[];      // protein, carbohydrate, fats, minerals, vitamins
 
-    public FoodNutrition(){
-        nutritions = new int[5];
-    }
-    public int[] setFoodNutrition(ItemStack item){
+    public FoodNutrition() {}
+
+    public int[] getFoodNutrition(ItemStack item){
         String foodName = item.getDisplayName();
 
         switch (Food.toFood(foodName)){
             case APPLE:
-                return Nutritions(1,1,1,1,1);
+                return Nutritions(1,1,1,1,1); // protein, carbohydrate, fats, minerals, vitamins
 
             case BAKED_POTATO:
                 return Nutritions(2,1,1,1,1);

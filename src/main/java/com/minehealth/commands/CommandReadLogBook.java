@@ -31,16 +31,12 @@ public class CommandReadLogBook extends CommandBase {
     public void processCommand(ICommandSender icommandsender, String[] astring)
     {
         EatLogBook logbook = new EatLogBook();
-        ArrayList<ItemStack> log = logbook.getEatLog();
+        List<ItemStack> log = logbook.getEatLog();
         EntityPlayerMP entity = getCommandSenderAsPlayer(icommandsender);
         int j = 1;
         entity.addChatMessage(new ChatComponentText("---- Eat Log ---- "));
         for(Iterator<ItemStack> i = log.iterator(); i.hasNext();) {
-            if(j%2 == 0){
-                entity.addChatMessage(new ChatComponentText(i.next().getDisplayName()));
-            }     //duplicate
-            else{ i.next(); }
-            j++;
+            entity.addChatMessage(new ChatComponentText(i.next().getDisplayName()));
         }
 
         return;
