@@ -1,6 +1,7 @@
 package com.minehealth;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
@@ -8,6 +9,7 @@ import net.minecraft.item.ItemStack;
 /**
  * Created by favcastle on 2014/04/09.
  */
+
 public enum Food {
 
     APPLE("Apple"),
@@ -39,108 +41,113 @@ public enum Food {
     NOT_FOOD("");
 
     private String displayName;
-    private Food(String displayName){
+
+    private Food(String displayName) {
         this.displayName = displayName;
     }
-    @Override
-    public String toString(){ return displayName;}
 
-    public static Food toFood(String displayName){
+    @Override
+    public String toString() {
+        return displayName;
+    }
+
+    public static Food toFood(String displayName) {
         Food result = null;
 
-        for(Food food : values()){
-            if(food.toString().equals(displayName)){
+        for (Food food : values()) {
+            if (food.toString().equals(displayName)) {
                 result = food;
                 break;
             }
         }
-        return result != null ? result:NOT_FOOD;
+        return result != null ? result : NOT_FOOD;
     }
-    public ItemStack NametoItemStack(String displayName){
-        Item item = new Item();
-        switch(toFood(displayName)){
+
+    public static ItemStack NametoItemStack(String displayName) {
+        switch (toFood(displayName)) {
             case APPLE:
-                return ItemStack(Item.apple);
-            /*
+                return new ItemStack(Items.apple);
+
             case BAKED_POTATO:
-                item.getItemById(260);
+                return new ItemStack(Items.baked_potato);
+
             case BREAD:
+                return new ItemStack(Items.bread);
 
             case CAKE:
-                return Nutritions(4,1,1,1,1);
+                return new ItemStack(Items.cake);
 
             case CLOWNFISH:
-                return Nutritions(5,1,1,1,1);
+                return new ItemStack(Items.fish);
 
             case COOKED_CHICKEN:
-                return Nutritions(6,1,1,1,1);
+                return new ItemStack(Items.cooked_chicken);
 
             case COOKED_FISH:
-                return Nutritions(7,1,1,1,1);
+                return new ItemStack(Items.cooked_fished);
 
             case COOKED_PORKCHOP:
-                return Nutritions(8,1,1,1,1);
+                return new ItemStack(Items.cooked_porkchop);
 
             case COOKED_SALMON:
-                return Nutritions(9,1,1,1,1);
+                return new ItemStack(Items.cooked_fished);
 
             case COOKIE:
-                return Nutritions(10,1,1,1,1);
+                return new ItemStack(Items.cookie);
 
             case GOLDEN_APPLE:
-                return Nutritions(11,1,1,1,1);
+                return new ItemStack(Items.golden_apple);
 
             case GOLDEN_CARROT:
-                return Nutritions(12,1,1,1,1);
+                return new ItemStack(Items.golden_carrot);
 
             case MELON:
-                return Nutritions(13,1,1,1,1);
+                return new ItemStack(Items.melon);
 
             case MUSHROOM_STEW:
-                return Nutritions(14,1,1,1,1);
+                return new ItemStack(Items.mushroom_stew);
 
             case POISONOUS_POTATO:
-                return Nutritions(15,1,1,1,1);
+                return new ItemStack(Items.poisonous_potato);
 
             case POTATO:
-                return Nutritions(16,1,1,1,1);
+                return new ItemStack(Items.potato);
 
             case PUFFERFISH:
-                return Nutritions(17,1,1,1,1);
+                return new ItemStack(Items.fish);
 
             case PUMPKIN_PIE:
-                return Nutritions(18,1,1,1,1);
+                return new ItemStack(Items.pumpkin_pie);
 
             case RAW_BEEF:
-                return Nutritions(19,1,1,1,1);
+                return new ItemStack(Items.beef);
 
             case RAW_CHICKEN:
-                return Nutritions(20,1,1,1,1);
+                return new ItemStack(Items.chicken);
 
             case RAW_FISH:
-                return Nutritions(21,1,1,1,1);
+                return new ItemStack(Items.fish);
 
             case RAW_PORKCHOP:
-                return Nutritions(22,1,1,1,1);
+                return new ItemStack(Items.porkchop);
 
             case RAW_SALMON:
-                return Nutritions(23,1,1,1,1);
+                return new ItemStack(Items.fish);
 
             case ROTTEN_FLESH:
-                return Nutritions(24,1,1,1,1);
+                return new ItemStack(Items.rotten_flesh);
 
             case SPIDER_EYE:
-                return Nutritions(25,1,1,1,1);
+                return new ItemStack(Items.spider_eye);
 
             case STEAK:
-                return Nutritions(26,1,1,1,1);
-            */
+                return new ItemStack(Items.cooked_beef);
+
             default:
-                break;
-
-
+                return new ItemStack(Items.apple);
         }
     }
 }
+
 
 

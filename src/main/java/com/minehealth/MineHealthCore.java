@@ -28,7 +28,7 @@ public class MineHealthCore {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event){
         MinecraftForge.EVENT_BUS.register(new EatEventHandler());
-    //    MinecraftForge.EVENT_BUS.register(new UserLoginHandler());
+        MinecraftForge.EVENT_BUS.register(new UserLoginHandler());
         Configuration config = new Configuration(event.getSuggestedConfigurationFile());
         config.load();
         config.save();

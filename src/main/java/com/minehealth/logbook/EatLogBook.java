@@ -52,13 +52,13 @@ public class EatLogBook {
     public void loadEatLog() {
         File file = new File("eatlog");
         String str;
-
         clearEatlog();
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
             try {
                 while((str = br.readLine()) != null){
-
+                    addEatLog(Food.NametoItemStack(str));
+                    addEatLog(Food.NametoItemStack(str));
                 }
             } finally {
                 br.close();

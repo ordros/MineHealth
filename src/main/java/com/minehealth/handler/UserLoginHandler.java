@@ -16,8 +16,10 @@ public class UserLoginHandler {
 
     @SubscribeEvent
     public void LoadEatLog(EntityJoinWorldEvent event){
+        EatLogBook logBook = new EatLogBook();
         if(event.entity instanceof EntityPlayer) {    // when player login
-
+            System.out.println("Player login");
+            logBook.loadEatLog();
         }
     }
 }
