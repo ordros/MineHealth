@@ -16,14 +16,8 @@ public class UserLoginHandler {
 
     @SubscribeEvent
     public void LoadEatLog(EntityJoinWorldEvent event){
-        if(event.entity instanceof EntityPlayer){
-            EntityPlayer entity = (EntityPlayer)event.entity;
-            NBTTagCompound tag = entity.getEntityData();
-            NBTBase modeTag = tag.getTag("EatLog");
-            if(modeTag != null) {
-                logBook.addEatLog(new ItemStack(ItemFood.getItemById(1)));
-            }
-            logBook.addEatLog(new ItemStack(ItemFood.getItemById(1)));
+        if(event.entity instanceof EntityPlayer) {    // when player login
+
         }
     }
 }
