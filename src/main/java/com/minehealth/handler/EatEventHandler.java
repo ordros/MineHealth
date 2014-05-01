@@ -1,17 +1,15 @@
 package com.minehealth.handler;
 
-import com.minehealth.Food;
-import com.minehealth.FoodNutrition;
 import com.minehealth.logbook.EatLogBook;
+import com.minehealth.nutrition.HealthCondition;
+import com.minehealth.nutrition.NutritionFacts;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.event.entity.player.PlayerUseItemEvent.Finish;
 
 public class EatEventHandler {
     EatLogBook logbook = new EatLogBook();
+    HealthCondition condition;
     public EatEventHandler(){
     }
     @SubscribeEvent
@@ -19,6 +17,8 @@ public class EatEventHandler {
         if(event.item.getItem() instanceof ItemFood){
             logbook.addEatLog(event.item);
             logbook.saveEatLog();
+            condition = new HealthCondition(NutritionFacts.CalcIngestedNutrition());
+            condition.EffectByCondition(event.entityPlayer);
         }
     }
 }

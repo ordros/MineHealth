@@ -1,12 +1,9 @@
-package com.minehealth;
+package com.minehealth.nutrition;
 
-import net.minecraft.block.Block;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 
-public enum Food {
+public enum Foods {
 
     APPLE("Apple"),
     BAKED_POTATO("Baked Potato"),
@@ -38,7 +35,7 @@ public enum Food {
 
     private String displayName;
 
-    private Food(String displayName) {
+    private Foods(String displayName) {
         this.displayName = displayName;
     }
 
@@ -47,10 +44,10 @@ public enum Food {
         return displayName;
     }
 
-    public static Food toFood(String displayName) {
-        Food result = null;
+    public static Foods toFood(String displayName) {
+        Foods result = null;
 
-        for (Food food : values()) {
+        for (Foods food : values()) {
             if (food.toString().equals(displayName)) {
                 result = food;
                 break;
