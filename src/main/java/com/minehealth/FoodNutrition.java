@@ -1,7 +1,10 @@
 package com.minehealth;
 
 import com.minehealth.Food;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import java.util.List;
 
 
 public class FoodNutrition {
@@ -10,102 +13,126 @@ public class FoodNutrition {
 
     public FoodNutrition() {}
 
-    public int[] getFoodNutrition(ItemStack item){
+    public void getFoodNutrition(ItemStack item){
         String foodName = item.getDisplayName();
 
         switch (Food.toFood(foodName)){
             case APPLE:
-                return Nutritions(1,1,1,1,1); // protein, carbohydrate, fats, minerals, vitamins
+                setNutritions(1,1,1,1,1); // protein, carbohydrate, fats, minerals, vitamins
+                break;
 
             case BAKED_POTATO:
-                return Nutritions(2,1,1,1,1);
+                setNutritions(2,1,1,1,1);
+                break;
 
             case BREAD:
-                return Nutritions(3,1,1,1,1);
+                setNutritions(3,1,1,1,1);
+                break;
 
             case CAKE:
-                return Nutritions(4,1,1,1,1);
+                setNutritions(4,1,1,1,1);
+                break;
 
             case CLOWNFISH:
-                return Nutritions(5,1,1,1,1);
+                setNutritions(5,1,1,1,1);
+                break;
 
             case COOKED_CHICKEN:
-                return Nutritions(6,1,1,1,1);
+                setNutritions(6,1,1,1,1);
+                break;
 
             case COOKED_FISH:
-                return Nutritions(7,1,1,1,1);
+                setNutritions(7,1,1,1,1);
+                break;
 
             case COOKED_PORKCHOP:
-                return Nutritions(8,1,1,1,1);
+                setNutritions(8,1,1,1,1);
+                break;
 
             case COOKED_SALMON:
-                return Nutritions(9,1,1,1,1);
+                setNutritions(9,1,1,1,1);
+                break;
 
             case COOKIE:
-                return Nutritions(10,1,1,1,1);
+                setNutritions(10,1,1,1,1);
+                break;
 
             case GOLDEN_APPLE:
-                return Nutritions(11,1,1,1,1);
+                setNutritions(11,1,1,1,1);
+                break;
 
             case GOLDEN_CARROT:
-                return Nutritions(12,1,1,1,1);
+                setNutritions(12,1,1,1,1);
+                break;
 
             case MELON:
-                return Nutritions(13,1,1,1,1);
+                setNutritions(13,1,1,1,1);
+                break;
 
             case MUSHROOM_STEW:
-                return Nutritions(14,1,1,1,1);
+                setNutritions(14,1,1,1,1);
+                break;
 
             case POISONOUS_POTATO:
-                return Nutritions(15,1,1,1,1);
+                setNutritions(15,1,1,1,1);
+                break;
 
             case POTATO:
-                return Nutritions(16,1,1,1,1);
+                setNutritions(16,1,1,1,1);
+                break;
 
             case PUFFERFISH:
-                return Nutritions(17,1,1,1,1);
+                setNutritions(17,1,1,1,1);
+                break;
 
             case PUMPKIN_PIE:
-                return Nutritions(18,1,1,1,1);
+                setNutritions(18,1,1,1,1);
+                break;
 
             case RAW_BEEF:
-                return Nutritions(19,1,1,1,1);
+                setNutritions(19,1,1,1,1);
+                break;
 
             case RAW_CHICKEN:
-                return Nutritions(20,1,1,1,1);
+                setNutritions(20,1,1,1,1);
+                break;
 
             case RAW_FISH:
-                return Nutritions(21,1,1,1,1);
+                setNutritions(21,1,1,1,1);
+                break;
 
             case RAW_PORKCHOP:
-                return Nutritions(22,1,1,1,1);
+                setNutritions(22,1,1,1,1);
+                break;
 
             case RAW_SALMON:
-                return Nutritions(23,1,1,1,1);
+                setNutritions(23,1,1,1,1);
+                break;
 
             case ROTTEN_FLESH:
-                return Nutritions(24,1,1,1,1);
+                setNutritions(24,1,1,1,1);
+                break;
 
             case SPIDER_EYE:
-                return Nutritions(25,1,1,1,1);
+                setNutritions(25,1,1,1,1);
+                break;
 
             case STEAK:
-                return Nutritions(26,1,1,1,1);
+                setNutritions(26,1,1,1,1);
+                break;
 
             default:
-                return Nutritions(100,2,2,2,2);
+                setNutritions(100,2,2,2,2);
+                break;
 
         }
     }
-    public int[] Nutritions(int protein, int carbohydrate, int fats, int minerals, int vitamins){
-        int[] nutritions = { protein, carbohydrate, fats, minerals, vitamins };
+    public void setNutritions(int protein, int carbohydrate, int fats, int minerals, int vitamins){
 
         this.protein = protein;
         this.carbohydrate = carbohydrate;
         this.fats = fats;
         this.minerals = minerals;
         this.vitamins = vitamins;
-
-        return nutritions;
     }
 }

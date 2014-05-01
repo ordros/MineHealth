@@ -6,10 +6,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 
-/**
- * Created by favcastle on 2014/04/09.
- */
-
 public enum Food {
 
     APPLE("Apple"),
@@ -63,7 +59,7 @@ public enum Food {
         return result != null ? result : NOT_FOOD;
     }
 
-    public static ItemStack NametoItemStack(String displayName) {
+    public static ItemStack NameToItemStack(String displayName) {
         switch (toFood(displayName)) {
             case APPLE:
                 return new ItemStack(Items.apple);

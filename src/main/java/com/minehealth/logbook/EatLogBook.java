@@ -2,7 +2,6 @@ package com.minehealth.logbook;
 
 
 import com.minehealth.Food;
-import com.minehealth.FoodNutrition;
 import net.minecraft.item.ItemStack;
 
 import java.io.*;
@@ -29,7 +28,10 @@ public class EatLogBook {
         this.log.add(item);
     }
 
-    public void clearEatlog(){ this.log.clear(); }
+    public void clearEatlog(){
+        this.log.clear();
+        saveEatLog();
+    }
 
     public void saveEatLog(){
         List<ItemStack> SaveLog = new ArrayList<ItemStack>();
@@ -57,8 +59,8 @@ public class EatLogBook {
             BufferedReader br = new BufferedReader(new FileReader(file));
             try {
                 while((str = br.readLine()) != null){
-                    addEatLog(Food.NametoItemStack(str));
-                    addEatLog(Food.NametoItemStack(str));
+                    addEatLog(Food.NameToItemStack(str));
+                    addEatLog(Food.NameToItemStack(str));
                 }
             } finally {
                 br.close();

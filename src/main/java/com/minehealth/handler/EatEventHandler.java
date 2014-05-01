@@ -12,7 +12,6 @@ import net.minecraftforge.event.entity.player.PlayerUseItemEvent.Finish;
 
 public class EatEventHandler {
     EatLogBook logbook = new EatLogBook();
-    FoodNutrition food = new FoodNutrition();
     public EatEventHandler(){
     }
     @SubscribeEvent
@@ -20,7 +19,6 @@ public class EatEventHandler {
         if(event.item.getItem() instanceof ItemFood){
             logbook.addEatLog(event.item);
             logbook.saveEatLog();
-            //food.getFoodNutrition(event.item);
         }
     }
 }

@@ -1,10 +1,9 @@
 package com.minehealth;
 
+import com.minehealth.commands.CommandEatLogBook;
 import com.minehealth.commands.CommandHunger;
-import com.minehealth.commands.CommandReadLogBook;
 import com.minehealth.handler.EatEventHandler;
 import com.minehealth.handler.UserLoginHandler;
-import com.minehealth.logbook.EatLogBook;
 import cpw.mods.fml.common.*;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.Mod.*;
@@ -18,12 +17,11 @@ public class MineHealthCore {
     public static final String MODID = "MineHealth";
     public static final String VERSION = "1.0";
 
-    public EatLogBook logBook = new EatLogBook();
-
+    public static int NumEffectiveLog;
     @EventHandler
     public void serverLoad(FMLServerStartingEvent event){
         event.registerServerCommand(new CommandHunger());
-        event.registerServerCommand(new CommandReadLogBook());
+        event.registerServerCommand(new CommandEatLogBook());
     }
     @EventHandler
     public void preInit(FMLPreInitializationEvent event){
@@ -31,6 +29,7 @@ public class MineHealthCore {
         MinecraftForge.EVENT_BUS.register(new UserLoginHandler());
         Configuration config = new Configuration(event.getSuggestedConfigurationFile());
         config.load();
+        NumEffectiveLog = config.get(Configuration.CATEGORY_GENERAL, "NumberOfEffectiveLog", 10).getInt(10);
         config.save();
     }
     @EventHandler
