@@ -1,6 +1,5 @@
 package com.minehealth.nutrition;
 
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 
@@ -11,16 +10,19 @@ public class FoodNutrition {
 
         switch (Foods.toFood(foodName)){
             case APPLE:
-                return new NutritionFacts.Builder().protein(1).carbohydrate(1).fats(1).minerals(1).vitamins(1).build();
+                return new NutritionFacts.Builder().protein(510).carbohydrate(37230).fats(260).minerals(321.48).vitamins(11.38).build();
 
             case BAKED_POTATO:
-                return new NutritionFacts.Builder().protein(2).carbohydrate(1).fats(1).minerals(1).vitamins(1).build();
+                return new NutritionFacts.Builder().protein(2280).carbohydrate(2280).fats(9890).minerals(1332.02).vitamins(50.33).build();
 
             case BREAD:
                 return new NutritionFacts.Builder().protein(3).carbohydrate(1).fats(1).minerals(1).vitamins(1).build();
 
             case CAKE:
-                return new NutritionFacts.Builder().protein(4).carbohydrate(1).fats(1).minerals(1).vitamins(1).build();
+                return new NutritionFacts.Builder().protein(4700).carbohydrate(29050).fats(25250).minerals(268.43).vitamins(11.11).build();
+
+            case CARROT:
+                return new NutritionFacts.Builder().protein(880).carbohydrate(13140).fats(150).minerals(519.09).vitamins(9.3).build();
 
             case CLOWNFISH:
                 return new NutritionFacts.Builder().protein(5).carbohydrate(1).fats(1).minerals(1).vitamins(1).build();

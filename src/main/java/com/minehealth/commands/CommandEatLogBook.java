@@ -43,7 +43,7 @@ public class CommandEatLogBook extends CommandBase {
                 countLog++;
             }
             facts = NutritionFacts.CalcIngestedNutrition();
-            entity.addChatMessage(new ChatComponentText(String.valueOf(facts.getProtein() + " " + facts.getCarbohydrate() + " " + facts.getFats() + " " + facts.getMinerals() + " " + facts.getVitamins())));
+            entity.addChatMessage(new ChatComponentText(String.valueOf(ShapeOutput.roundOff(facts.getProtein(), 2) + " " + ShapeOutput.roundOff(facts.getCarbohydrate(), 2) + " " + ShapeOutput.roundOff(facts.getFats(), 2) + " " + ShapeOutput.roundOff(facts.getMinerals(), 2) + " " + ShapeOutput.roundOff(facts.getVitamins(), 2))));
         }else{
             entity.addChatMessage(new ChatComponentText(" Log is EMPTY."));
         }

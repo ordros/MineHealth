@@ -8,7 +8,8 @@ public enum Foods {
     APPLE("Apple"),
     BAKED_POTATO("Baked Potato"),
     BREAD("Bread"),
-    CAKE("Carrot"),
+    CAKE("Cake"),
+    CARROT("Carrot"),
     CLOWNFISH("Clownfish"),
     COOKED_CHICKEN("Cooked Chicken"),
     COOKED_FISH("Cooked Fish"),
@@ -70,8 +71,11 @@ public enum Foods {
             case CAKE:
                 return new ItemStack(Items.cake);
 
+            case CARROT:
+                return new ItemStack(Items.carrot);
+
             case CLOWNFISH:
-                return new ItemStack(Items.fish);
+                return new ItemStack(Items.fish, 1, (short) 2);
 
             case COOKED_CHICKEN:
                 return new ItemStack(Items.cooked_chicken);
@@ -83,7 +87,7 @@ public enum Foods {
                 return new ItemStack(Items.cooked_porkchop);
 
             case COOKED_SALMON:
-                return new ItemStack(Items.cooked_fished);
+                return new ItemStack(Items.cooked_fished, 1, (short) 1);
 
             case COOKIE:
                 return new ItemStack(Items.cookie);
@@ -107,7 +111,7 @@ public enum Foods {
                 return new ItemStack(Items.potato);
 
             case PUFFERFISH:
-                return new ItemStack(Items.fish);
+                return new ItemStack(Items.fish, 1, (short) 3);
 
             case PUMPKIN_PIE:
                 return new ItemStack(Items.pumpkin_pie);
@@ -125,7 +129,7 @@ public enum Foods {
                 return new ItemStack(Items.porkchop);
 
             case RAW_SALMON:
-                return new ItemStack(Items.fish);
+                return new ItemStack(Items.fish, 1, (short) 1);
 
             case ROTTEN_FLESH:
                 return new ItemStack(Items.rotten_flesh);

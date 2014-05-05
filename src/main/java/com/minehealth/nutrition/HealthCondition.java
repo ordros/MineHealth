@@ -1,17 +1,16 @@
 package com.minehealth.nutrition;
 
-import com.minehealth.effect.HealthEffect;
 import net.minecraft.entity.player.EntityPlayer;
 
 public class HealthCondition {
-    private final int protein;
-    private final int carbohydrate;
-    private final int fats;
-    private final int minerals;
-    private final int vitamins;
-    private final int all_nutrients;
+    private final double protein;
+    private final double carbohydrate;
+    private final double fats;
+    private final double minerals;
+    private final double vitamins;
+    private final double all_nutrients;
 
-    public boolean isObesity = false;
+    public boolean isOverFats = false;
 
     public HealthCondition(NutritionFacts facts){
         this.protein = facts.getProtein();
@@ -23,12 +22,13 @@ public class HealthCondition {
     }
 
     public void DecideCondition(){
-        if(this.fats/this.all_nutrients  >= 0.3) isObesity = true;
+        if(this.fats/this.all_nutrients  >= 0.3) isOverFats = true;
+
     }
 
     public void EffectByCondition(EntityPlayer player){
         DecideCondition();
-        if(isObesity == true){
+        if(isOverFats == true){
             NutritionalDisorders.Obesity(player);
         }
     }

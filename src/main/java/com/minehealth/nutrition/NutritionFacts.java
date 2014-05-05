@@ -8,14 +8,14 @@ import java.util.Collections;
 import java.util.List;
 
 public class NutritionFacts {
-    private final int protein;
-    private final int carbohydrate;
-    private final int fats;
-    private final int minerals;
-    private final int vitamins;
+    private final double protein;
+    private final double carbohydrate;
+    private final double fats;
+    private final double minerals;
+    private final double vitamins;
 
     public static NutritionFacts CalcIngestedNutrition(){
-        int protein = 0, carbohydrate = 0, fats = 0, minerals = 0, vitamins = 0;
+        double protein = 0, carbohydrate = 0, fats = 0, minerals = 0, vitamins = 0;
         int LOG_MAX = MineHealthCore.NumEffectiveLog;
 
         FoodNutrition food = new FoodNutrition();
@@ -41,29 +41,29 @@ public class NutritionFacts {
     }
 
     public static class Builder{
-        private int protein = 0;
-        private int carbohydrate = 0;
-        private int fats = 0;
-        private int minerals = 0;
-        private int vitamins = 0;
+        private double protein = 0;
+        private double carbohydrate = 0;
+        private double fats = 0;
+        private double minerals = 0;
+        private double vitamins = 0;
 
-        public Builder protein(int val){
+        public Builder protein(double val){
             protein = val; return this;
         }
 
-        public Builder carbohydrate(int val){
+        public Builder carbohydrate(double val){
             carbohydrate = val; return this;
         }
 
-        public Builder fats(int val){
+        public Builder fats(double val){
             fats = val; return this;
         }
 
-        public Builder minerals(int val){
+        public Builder minerals(double val){
             minerals = val; return this;
         }
 
-        public Builder vitamins(int val){
+        public Builder vitamins(double val){
             vitamins = val; return this;
         }
 
@@ -73,19 +73,19 @@ public class NutritionFacts {
 
     }
 
-    public int getProtein(){
+    public double getProtein(){
         return this.protein;
     }
-    public int getCarbohydrate(){
+    public double getCarbohydrate(){
         return this.carbohydrate;
     }
-    public int getFats(){
+    public double getFats(){
         return this.fats;
     }
-    public int getMinerals(){
+    public double getMinerals(){
         return this.minerals;
     }
-    public int getVitamins(){
+    public double getVitamins(){
         return this.vitamins;
     }
 

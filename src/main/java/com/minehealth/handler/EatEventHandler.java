@@ -8,8 +8,8 @@ import net.minecraft.item.ItemFood;
 import net.minecraftforge.event.entity.player.PlayerUseItemEvent.Finish;
 
 public class EatEventHandler {
-    EatLogBook logbook = new EatLogBook();
-    HealthCondition condition;
+    private EatLogBook logbook = new EatLogBook();
+    private HealthCondition condition;
     public EatEventHandler(){
     }
     @SubscribeEvent
