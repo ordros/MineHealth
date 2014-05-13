@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 
 public class FoodNutrition {
 
-    public NutritionFacts getFoodNutritionFacts(ItemStack item){
+    public static NutritionFacts getFoodNutritionFacts(ItemStack item){
         String foodName = item.getDisplayName();
 
         switch (Foods.toFood(foodName)){

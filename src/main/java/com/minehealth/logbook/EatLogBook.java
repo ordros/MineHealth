@@ -13,19 +13,11 @@ public class EatLogBook {
 
     private static List<ItemStack> log = new ArrayList<ItemStack>();
     public List<ItemStack> getEatLog(){
-        int j=1;
-        List<ItemStack> PrintLog = new ArrayList<ItemStack>();
-        for(Iterator<ItemStack> i = log.iterator(); i.hasNext();){
-            if(j%2 == 0){
-                PrintLog.add(i.next());
-            }
-            else{ i.next(); }
-            j++;
-        }
-        return PrintLog;
+        return this.log;
     }
     public void addEatLog(ItemStack item){
         this.log.add(item);
+        saveEatLog();
     }
 
     public void clearEatlog(){
@@ -57,8 +49,7 @@ public class EatLogBook {
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
             try {
-                while((str = br.readLine()) != null){
-                    addEatLog(Foods.NameToItemStack(str));
+                while((str = br.readLine()) != null) {
                     addEatLog(Foods.NameToItemStack(str));
                 }
             } finally {

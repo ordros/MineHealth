@@ -141,7 +141,7 @@ public enum Foods {
                 return new ItemStack(Items.cooked_beef);
 
             default:
-                return new ItemStack(Items.apple);
+                return new ItemStack(Items.command_block_minecart);
         }
     }
 }

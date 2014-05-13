@@ -2,8 +2,11 @@ package com.minehealth.nutrition;
 
 import com.minehealth.MineHealthCore;
 import com.minehealth.logbook.EatLogBook;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 
+import javax.swing.text.html.parser.Entity;
 import java.util.Collections;
 import java.util.List;
 
@@ -13,32 +16,6 @@ public class NutritionFacts {
     private final double fats;
     private final double minerals;
     private final double vitamins;
-
-    public static NutritionFacts CalcIngestedNutrition(){
-        double protein = 0, carbohydrate = 0, fats = 0, minerals = 0, vitamins = 0;
-        int LOG_MAX = MineHealthCore.NumEffectiveLog;
-
-        FoodNutrition food = new FoodNutrition();
-        EatLogBook logBook = new EatLogBook();
-        NutritionFacts facts;
-        List<ItemStack> log = logBook.getEatLog();
-
-        Collections.reverse(log);
-        for(ItemStack item: log){
-            facts = food.getFoodNutritionFacts(item);
-
-            protein += facts.getProtein();
-            carbohydrate += facts.getCarbohydrate();
-            fats += facts.getFats();
-            minerals += facts.getMinerals();
-            vitamins += facts.getVitamins();
-
-            LOG_MAX--;
-            if(LOG_MAX <= 0) break;
-        }
-        return new Builder().protein(protein).carbohydrate(carbohydrate).fats(fats).minerals(minerals).vitamins(vitamins).build();
-
-    }
 
     public static class Builder{
         private double protein = 0;
@@ -96,5 +73,4 @@ public class NutritionFacts {
         minerals = builder.minerals;
         vitamins = builder.vitamins;
     }
-
 }
