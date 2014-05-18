@@ -11,7 +11,7 @@ import java.util.List;
 
 public class EatLogBook {
 
-    private static List<ItemStack> log = new ArrayList<ItemStack>();
+    private final static List<ItemStack> log = new ArrayList<ItemStack>();
     public List<ItemStack> getEatLog(){
         return this.log;
     }

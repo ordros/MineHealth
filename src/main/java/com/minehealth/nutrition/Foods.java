@@ -57,7 +57,7 @@ public enum Foods {
         return result != null ? result : NOT_FOOD;
     }
 
-    public static ItemStack NameToItemStack(String displayName) {
+    public static ItemStack NameToItemStack(String displayName) {       //Name of food convert to ItemStack (ex.NametoItemStack("Apple") -> ItemStack(Item(Items.apple)))
         switch (toFood(displayName)) {
             case APPLE:
                 return new ItemStack(Items.apple);
@@ -140,8 +140,11 @@ public enum Foods {
             case STEAK:
                 return new ItemStack(Items.cooked_beef);
 
+            case NOT_FOOD:
+                return new ItemStack(Items.command_block_minecart); // NOT a Food
+
             default:
-                return new ItemStack(Items.command_block_minecart);
+                return new ItemStack(Items.command_block_minecart); // NOT a Food
         }
     }
 }

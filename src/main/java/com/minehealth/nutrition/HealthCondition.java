@@ -28,20 +28,6 @@ public class HealthCondition {
         this.player = player;
     }
 
-    public void addNutrition(ItemStack item){
-        NutritionFacts facts = FoodNutrition.getFoodNutritionFacts(item);
-        nbt = new ManageNBT(this.player);
-        nbt.setNutrientToNBT("Protein", facts.getProtein() + nbt.getNutrientFromNBT("Protein"));
-        nbt.setNutrientToNBT("Carbohydrate", facts.getCarbohydrate() + nbt.getNutrientFromNBT("Carbohydrate"));
-        nbt.setNutrientToNBT("Fats", facts.getFats() + nbt.getNutrientFromNBT("Fats"));
-        nbt.setNutrientToNBT("Minerals", facts.getMinerals() + nbt.getNutrientFromNBT("Minerals"));
-        nbt.setNutrientToNBT("Vitamins", facts.getVitamins() + nbt.getNutrientFromNBT("Vitamins"));
-    }
-
-    public void consumeNutrition(int protein, int carbohydrate, int fats, int minerals, int vitamins){
-        this.nbt = new ManageNBT(this.player);
-    }
-
     public void DecideCondition(){
         if(this.fats/this.all_nutrients  >= 0.3) isOverFats = true;
     }

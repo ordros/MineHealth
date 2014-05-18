@@ -1,6 +1,8 @@
 package com.minehealth.commands;
 
 import java.util.*;
+
+import com.minehealth.MineHealthCore;
 import net.minecraft.command.*;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.potion.PotionEffect;
@@ -50,10 +52,10 @@ public class CommandHunger extends CommandBase{
     @Override
     public boolean canCommandSenderUseCommand(ICommandSender icommandsender)
     {
+        if(MineHealthCore.UseCommandHunger == true) return true;
         EntityPlayerMP entity;
         entity = getCommandSenderAsPlayer(icommandsender);
-        return true;
-        //return entity.capabilities.isCreativeMode ? true:false;
+        return entity.capabilities.isCreativeMode ? true : false;
     }
 
     @Override

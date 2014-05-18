@@ -1,16 +1,7 @@
 package com.minehealth.nutrition;
 
-import com.minehealth.MineHealthCore;
-import com.minehealth.logbook.EatLogBook;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.item.ItemStack;
 
-import javax.swing.text.html.parser.Entity;
-import java.util.Collections;
-import java.util.List;
-
-public class NutritionFacts {
+public class NutritionFacts {      // Nutrition facts of food
     private final double protein;
     private final double carbohydrate;
     private final double fats;
