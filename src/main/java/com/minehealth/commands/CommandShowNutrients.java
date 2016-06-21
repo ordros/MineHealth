@@ -7,6 +7,7 @@ import com.minehealth.nutrition.Foods;
 import com.minehealth.nutrition.NutritionFacts;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
+import net.minecraft.command.PlayerNotFoundException;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -40,10 +41,11 @@ public class CommandShowNutrients extends CommandBase{
     }
 
     @Override
-    public void processCommand(ICommandSender icommandsender, String[] astring)
+    public void processCommand(ICommandSender icommandsender, String[] astring) throws PlayerNotFoundException
     {
         EntityPlayerMP entity;
-        entity = getCommandSenderAsPlayer(icommandsender);
+        //entity = getCommandSenderAsPlayer(icommandsender);
+        entity = (EntityPlayerMP) icommandsender;
         ItemStack food;
 
         if(astring.length != 0){

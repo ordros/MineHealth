@@ -32,7 +32,7 @@ public class CommandHunger extends CommandBase{
     }
 
     @Override
-    public void processCommand(ICommandSender icommandsender, String[] astring)
+    public void processCommand(ICommandSender icommandsender, String[] astring) throws PlayerNotFoundException
     {
         EntityPlayerMP entity;
         if (astring.length > 1)
@@ -54,11 +54,16 @@ public class CommandHunger extends CommandBase{
     {
         if(MineHealthCore.UseCommandHunger == true) return true;
         EntityPlayerMP entity;
-        entity = getCommandSenderAsPlayer(icommandsender);
+        entity = null;
+        try {
+            entity = getCommandSenderAsPlayer(icommandsender);
+        }catch (PlayerNotFoundException e){
+            e.printStackTrace();
+        }
         return entity.capabilities.isCreativeMode ? true : false;
     }
 
-    @Override
+    //@Override
     public List addTabCompletionOptions(ICommandSender icommandsender, String[] astring)
     {
         return null;
@@ -69,11 +74,11 @@ public class CommandHunger extends CommandBase{
     {
         return false;
     }
-
+/*
     @Override
     public int compareTo(Object o)
     {
         return 0;
     }
-
+*/
 }

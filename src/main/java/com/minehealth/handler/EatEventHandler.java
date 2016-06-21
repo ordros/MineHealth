@@ -5,7 +5,8 @@ import com.minehealth.logbook.EatLogBook;
 import com.minehealth.nutrition.HealthCondition;
 import com.minehealth.nutrition.NutritionFacts;
 import com.minehealth.nutrition.NutritionalCondition;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+//import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemFood;
 import net.minecraftforge.event.entity.player.PlayerUseItemEvent.Finish;
@@ -23,7 +24,6 @@ public class EatEventHandler {
             logbook.addEatLog(event.item);
             condition = new HealthCondition(event.entityPlayer);
             Ncondition = new NutritionalCondition(event.entityPlayer);
-
 
             //condition.EffectByCondition(event.entityPlayer);
         }

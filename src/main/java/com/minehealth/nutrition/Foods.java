@@ -81,13 +81,13 @@ public enum Foods {
                 return new ItemStack(Items.cooked_chicken);
 
             case COOKED_FISH:
-                return new ItemStack(Items.cooked_fished);
+                return new ItemStack(Items.cooked_fish);
 
             case COOKED_PORKCHOP:
                 return new ItemStack(Items.cooked_porkchop);
 
             case COOKED_SALMON:
-                return new ItemStack(Items.cooked_fished, 1, (short) 1);
+                return new ItemStack(Items.cooked_fish, 1, (short) 1);
 
             case COOKIE:
                 return new ItemStack(Items.cookie);

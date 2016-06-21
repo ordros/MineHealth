@@ -6,11 +6,13 @@ import com.minehealth.commands.CommandShowNutrients;
 import com.minehealth.handler.AttackEventHandler;
 import com.minehealth.handler.EatEventHandler;
 import com.minehealth.handler.UserLoginHandler;
-import cpw.mods.fml.common.*;
-import cpw.mods.fml.common.event.*;
-import cpw.mods.fml.common.Mod.*;
+import net.minecraftforge.fml.common.*;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import sun.security.krb5.Config;
 
 
@@ -23,13 +25,13 @@ public class MineHealthCore {
     public static int NumEffectiveLog;
     public static boolean UseCommandHunger;
 
-    @EventHandler
+    @Mod.EventHandler
     public void serverLoad(FMLServerStartingEvent event){
         event.registerServerCommand(new CommandHunger());
         event.registerServerCommand(new CommandEatLogBook());
         event.registerServerCommand(new CommandShowNutrients());
     }
-    @EventHandler
+    @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
         MinecraftForge.EVENT_BUS.register(new EatEventHandler());
         MinecraftForge.EVENT_BUS.register(new UserLoginHandler());
@@ -41,11 +43,11 @@ public class MineHealthCore {
         UseCommandHunger = config.get(Configuration.CATEGORY_GENERAL, "UseCommandHunger", false).getBoolean(false);
         config.save();
     }
-    @EventHandler
+    @Mod.EventHandler
     public void init(FMLInitializationEvent event){
 
     }
-    @EventHandler
+    @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event){
 
     }
